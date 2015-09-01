@@ -2,18 +2,9 @@ package exhaustiveSearch;
 import java.util.ArrayList;
 
 /*quesion:
- * http://www.lintcode.com/en/problem/permutations/
- * answer:
- * http://www.jiuzhang.com/solutions/permutations/
- * http://algorithm.yuanbin.me/exhaustive_search/permutation.html
- * 
  * Given a list of numbers, return all possible permutations.
- * question: http://www.lintcode.com/en/problem/permutations/
- * 
- * Example
- * 
+ Example
  For nums = [1,2,3], the permutations are:
-
  [
  [1,2,3],
  [1,3,2],
@@ -47,7 +38,7 @@ public class Permutations {
 	public static void permutHelper(ArrayList<ArrayList<Integer>> result,
 			ArrayList<Integer> list, ArrayList<Integer> num) {
 
-		if (list.size() == num.size()) { // µİ¹éµÄ»ù±¾Ìõ¼ş£¬Ò²ÊÇÖÕÖ¹Ìõ¼ş¡£
+		if (list.size() == num.size()) { // é€’å½’çš„åŸºæœ¬æ¡ä»¶ï¼Œä¹Ÿæ˜¯ç»ˆæ­¢æ¡ä»¶ã€‚
 			result.add(new ArrayList<Integer>(list));
 			System.out.println("1. current list is: " + list);
 			System.out.println("1-1. the current result is: " + result);
@@ -56,15 +47,15 @@ public class Permutations {
 		for (int i = 0; i < num.size(); i++) {
 			System.out.println("3. the current list in for loop is: " + list);
 			if (list.contains(num.get(i))) {
-				// Ñ¡Ôñ²»ÖØ¸´µÄÊı×Ö·Å½ølist
+				// é€‰æ‹©ä¸é‡å¤çš„æ•°å­—æ”¾è¿›list
 				continue;
 			}
 			list.add(num.get(i));
 			System.out
 					.println("4. the current list in for loop after list.add is: "
 							+ list);
-			permutHelper(result, list, num); // µİ¹éº¯Êı£¬ÕâÀïÒª¿´µİ¹éµÄ²ãÊıÓĞ¶àÉÙ¡£
-			list.remove(list.size() - 1); // µİ¹é½áÊøºó£¬»áµ÷ÓÃremove º¯Êı£¬µİ¹éÁË¶àÉÙ²ã¾Í»áÏòÉÏ¶àÉÙ²ã¡£
+			permutHelper(result, list, num); // é€’å½’å‡½æ•°ï¼Œè¿™é‡Œè¦çœ‹é€’å½’çš„å±‚æ•°æœ‰å¤šå°‘ã€‚
+			list.remove(list.size() - 1); // é€’å½’ç»“æŸåï¼Œä¼šè°ƒç”¨remove å‡½æ•°ï¼Œé€’å½’äº†å¤šå°‘å±‚å°±ä¼šå‘ä¸Šå¤šå°‘å±‚ã€‚
 			System.out.println("4-1 .list after list.remove(list.size()-1)): "
 					+ list);
 		}
