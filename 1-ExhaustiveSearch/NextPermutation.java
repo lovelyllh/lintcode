@@ -2,26 +2,20 @@ package exhaustiveSearch;
 
 /*
  question:  Next Permutation
- http://www.lintcode.com/en/problem/next-permutation/#
-
  Given a list of integers, which denote a permutation.Find the next permutation in ascending order.
-
  Example
  For [1,3,2,3], the next permutation is [1,3,3,2]
  For [4,3,2,1], the next permutation is [1,2,3,4]
 
  Note
  The list may contains duplicate integers.
-
- *Anser:
- *http://www.jiuzhang.com/solutions/next-permutation/
  *
- *½â´ğ£º
- 1. ´ÓÎ²²¿ÍùÇ°ËÑË÷£¬ÏÈÕÒµ½µÚÒ»¸öÏÂ½µµÄÊı×Ö£¬±ê¼ÇÖ®¡£
- Àı×Ó£º 12431£¬ ÔòÎÒÃÇÕÒµ½µÄÊÇ 2
- 2. »¹ÊÇ´ÓÎ²ÍùÇ°ËÑË÷£¬ÕÒµ½µÚÒ»¸ö±È2´óµÄÊı×Ö £¬½»»»Ö®¡£
+ *è§£ç­”ï¼š
+ 1. ä»å°¾éƒ¨å¾€å‰æœç´¢ï¼Œå…ˆæ‰¾åˆ°ç¬¬ä¸€ä¸ªä¸‹é™çš„æ•°å­—ï¼Œæ ‡è®°ä¹‹ã€‚
+ ä¾‹å­ï¼š 12431ï¼Œ åˆ™æˆ‘ä»¬æ‰¾åˆ°çš„æ˜¯ 2
+ 2. è¿˜æ˜¯ä»å°¾å¾€å‰æœç´¢ï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ªæ¯”2å¤§çš„æ•°å­— ï¼Œäº¤æ¢ä¹‹ã€‚
  12431 --> 13421
- 3. ½«421½øĞĞ·´Ğò¡£ÕâÑùÎÒÃÇ¿ÉÒÔµÃµ½Ò»¸ö¸ßÎ»Ôö¼ÓºóµÄ×îĞ¡µÄºóĞøÖµ
+ 3. å°†421è¿›è¡Œååºã€‚è¿™æ ·æˆ‘ä»¬å¯ä»¥å¾—åˆ°ä¸€ä¸ªé«˜ä½å¢åŠ åçš„æœ€å°çš„åç»­å€¼
  13421 --> 13124
  *
  */
@@ -33,8 +27,8 @@ public class NextPermutation {
 		if (nums == null) {
 			return;
 		}
-		// ´ÓÎ²²¿ÍùÇ°ËÑË÷£¬ÏÈÕÒµ½µÚÒ»¸öÏÂ½µµÄÊı×Ö£¬±ê¼ÇÖ®¡£
-		// Àı×Ó£º 12431£¬ ÔòÎÒÃÇÕÒµ½µÄÊÇ 2
+		// ä»å°¾éƒ¨å¾€å‰æœç´¢ï¼Œå…ˆæ‰¾åˆ°ç¬¬ä¸€ä¸ªä¸‹é™çš„æ•°å­—ï¼Œæ ‡è®°ä¹‹ã€‚
+		// ä¾‹å­ï¼š 12431ï¼Œ åˆ™æˆ‘ä»¬æ‰¾åˆ°çš„æ˜¯ 2
 		int index = -1;
 		for (int i = nums.length - 2; i >= 0; i--) {
 			if (nums[i + 1] > nums[i]) {
