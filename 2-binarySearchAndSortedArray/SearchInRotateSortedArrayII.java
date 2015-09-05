@@ -1,8 +1,6 @@
 package binarySearchAndSortedArray;
 
 /*Search in Rotated Sorted Array II
-question: http://www.lintcode.com/en/problem/search-in-rotated-sorted-array-ii/
-answer: http://www.jiuzhang.com/solutions/search-in-rotated-sorted-array-ii/
 Follow up for "Search in Rotated Sorted Array":
 What if duplicates are allowed?
 Would this affect the run-time complexity? How and why?
