@@ -1,8 +1,6 @@
 package binarySearchAndSortedArray;
 
 /*Median of two Sorted Arrays
-question: http://www.lintcode.com/en/problem/median-of-two-sorted-arrays/
-answer:http://www.jiuzhang.com/solutions/median-of-two-sorted-arrays/
 There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays.
 Example
 Given A=[1,2,3,4,5,6] and B=[2,3,4,5], the median is 3.5.
@@ -45,7 +43,7 @@ public class MedianOfTwoSortedArray {
 		//if one array is too short
 		int A_key = A_start + k / 2 - 1 < A.length ? A[A_start + k / 2 - 1] : Integer.MAX_VALUE;
 		int B_key = B_start + k / 2 - 1 < B.length ? B[B_start + k / 2 - 1] : Integer.MAX_VALUE;
-		//compare A_key > B_key£¬È¡Ğ¡µÄÕÛ°ëµİ¹éµ÷ÓÃfindKth¡£
+		//compare A_key > B_keyï¼Œå–å°çš„æŠ˜åŠé€’å½’è°ƒç”¨findKthã€‚
 		if (A_key < B_key){
 			return findKth(A, A_start + k / 2, B, B_start, k - k / 2);
 		}else{
