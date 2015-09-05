@@ -1,9 +1,6 @@
 package binarySearchAndSortedArray;
 
 /*Remove Duplicates from Sorted Array II
- * question: http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array-ii/
- * answer:  http://www.jiuzhang.com/solutions/remove-duplicates-from-sorted-array-ii/
-
 Follow up for "Remove Duplicates":
 What if duplicates are allowed at most twice?
 For example,
