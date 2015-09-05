@@ -1,20 +1,15 @@
 /*Search Insert Position
- * 
- * Question: http://www.lintcode.com/en/problem/search-insert-position/
  * Given a sorted array and a target value, return the index if the target is found. 
 If not, return the index where it would be if it were inserted in order.
 You may assume NO duplicates in the array.
 Example
-[1,3,5,6], 5 ¡ú 2
-[1,3,5,6], 2 ¡ú 1
-[1,3,5,6], 7 ¡ú 4
-[1,3,5,6], 0 ¡ú 0
+[1,3,5,6], 5 â†’ 2
+[1,3,5,6], 2 â†’ 1
+[1,3,5,6], 7 â†’ 4
+[1,3,5,6], 0 â†’ 0
 
 Challenge
 O(log(n)) time
-Answer:
-http://www.jiuzhang.com/solutions/search-insert-position/
-
 time: (O(log(n))
 */
 
@@ -39,7 +34,7 @@ public class SearchInsertPositionBinarySearch {
 			}else{
 				end = mid - 1;
 			}
-		}//binary search: ¾ÍÊÇµ±Ñ­»·½áÊøÊ±£¬Èç¹ûÃ»ÓĞÕÒµ½Ä¿±êÔªËØ£¬ÄÇÃ´left (start)Ò»¶¨Í£ÔÚÇ¡ºÃ±ÈÄ¿±ê´óµÄindexÉÏ£¬right (end)Ò»¶¨Í£ÔÚÇ¡ºÃ±ÈÄ¿±êĞ¡µÄindexÉÏ
+		}//binary search: å°±æ˜¯å½“å¾ªç¯ç»“æŸæ—¶ï¼Œå¦‚æœæ²¡æœ‰æ‰¾åˆ°ç›®æ ‡å…ƒç´ ï¼Œé‚£ä¹ˆleft (start)ä¸€å®šåœåœ¨æ°å¥½æ¯”ç›®æ ‡å¤§çš„indexä¸Šï¼Œright (end)ä¸€å®šåœåœ¨æ°å¥½æ¯”ç›®æ ‡å°çš„indexä¸Š
 		if (target > A[start]){
 			return start + 1;
 		}else{
