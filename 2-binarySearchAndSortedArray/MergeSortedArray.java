@@ -1,5 +1,4 @@
 /*Merge Sorted Array
- * 1. question:  http://www.lintcode.com/en/problem/merge-sorted-array/#
  Given two sorted integer arrays A and B, merge B into A as one sorted array.
 Example
 A = [1, 2, 3, empty, empty], B = [4, 5]
@@ -14,12 +13,8 @@ How can you optimize your algorithm if one array is very large and the other is 
 Note:
 You may assume that A has enough space (size that is greater or equal to m + n) to hold additional 
 elements from B. The number of elements initialized in A and B are m and n respectively.
-
- * 2. Answer:
- * http://www.jiuzhang.com/solutions/merge-sorted-array/
- * ¸´ÔÓ¶È·ÖÎö
-
-×î»µÇé¿öÏÂĞèÒª±éÀúÁ½¸öÊı×éÖĞËùÓĞÔªËØ£¬Ê±¼ä¸´ÔÓ¶ÈÎª O(n). ¿Õ¼ä¸´ÔÓ¶È O(1).
+å¤æ‚åº¦åˆ†æ
+æœ€åæƒ…å†µä¸‹éœ€è¦éå†ä¸¤ä¸ªæ•°ç»„ä¸­æ‰€æœ‰å…ƒç´ ï¼Œæ—¶é—´å¤æ‚åº¦ä¸º O(n). ç©ºé—´å¤æ‚åº¦ O(1).
  * 
  * */
 
