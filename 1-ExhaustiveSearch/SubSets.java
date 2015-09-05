@@ -4,15 +4,9 @@ import java.util.Collections;
 
 /*
  * question:
- * http://www.lintcode.com/en/problem/subsets/
- * answer:
- * http://www.jiuzhang.com/solutions/subsets/
- * 
  * Given a set of distinct integers, return all possible subsets.
- * 
- * Example
+Example
  If S = [1,2,3], a solution is:
-
  [
  [3],
  [1],
@@ -23,9 +17,6 @@ import java.util.Collections;
  [1,2],
  []
  ]
- * 
- * 
- * 
  * */
 
 public class SubSets {
@@ -55,13 +46,13 @@ public class SubSets {
 		System.out.println("1. the current list is: " + list
 				+ ", the current result is: " + result);
 		System.out.println("----------------------------");
-		for (int i = pos; i < num.size(); i++) {// ¿ªÊ¼ÒÔiÎªÊ×µÄ×Ó¼¯
+		for (int i = pos; i < num.size(); i++) {// å¼€å§‹ä»¥iä¸ºé¦–çš„å­é›†
 			System.out.println("2. current i is: " + i);
 			System.out.println("2-1. current pos is: " + pos);
 			list.add(num.get(i));
 			System.out.println("3. list starts at " + i + " is: " + list);
-			subsetsHelper(result, list, num, i + 1);// ¼ÓÈëÒÔiÎªÊ×µÄËùÓÐ×Ó¼¯£¬ e.g£º£û1£ý£¬
-													// £û1£¬2£ý£¬ £û1£¬2£¬3£ý
+			subsetsHelper(result, list, num, i + 1);// åŠ å…¥ä»¥iä¸ºé¦–çš„æ‰€æœ‰å­é›†ï¼Œ e.gï¼šï½›1ï½ï¼Œ
+			// ï½›1ï¼Œ2ï½ï¼Œ ï½›1ï¼Œ2ï¼Œ3ï½
 			list.remove(list.size() - 1);
 			System.out.println("4. list after list.remove(list.size()-1)): "
 					+ list);

@@ -5,7 +5,6 @@ import java.util.Arrays;
 /*Given a list of numbers that may has duplicate numbers, return all possible subsets
  * Example:
  * If S = [1,2,2], a solution is:
-
  [
  [2],
  [1],
@@ -21,22 +20,16 @@ import java.util.Arrays;
  * */
 /*needs review(remember)
  /*
- question: http://www.lintcode.com/en/problem/subsets-ii/
- answer: http://www.jiuzhang.com/solutions/subsets-ii/
- Ê¹ÓÃ¾ÅÕÂËã·¨µÄÄ£°å£º
- µİ¹é½â¾ö¡£
- 1. ÏÈ¶ÔÊı×é½øĞĞÅÅĞò¡£
- 2. ÔÚsetÖĞÒÀ´ÎÈ¡Ò»¸öÊı×Ö³öÀ´¼´¿É£¬ÒòÎªÎÒÃÇ±£³ÖÉıĞò£¬ËùÒÔ²»ĞèÒªÈ¡µ±Ç°IndexÖ®Ç°µÄÊı×Ö¡£
- ¶ÔÓÚÃ¿Ò»¸öÖ¸Õëstart£¬ Ñ­»·¼ÓÈëÒÔS[start]ÎªÆğÊ¼ÔªËØµÄsubset£¬ Ò»²ãforÑ­»·½áÊøºó£¬ °Ñ¸Õ¸Õ¼ÓÈëµ½ÁÙÊ±×Ó¼¯ÖĞµÄÔªËØremoveµô£¬ Ò²¾ÍÊÇ»ØËİ
+ é€’å½’è§£å†³ã€‚
+ 1. å…ˆå¯¹æ•°ç»„è¿›è¡Œæ’åºã€‚
+ 2. åœ¨setä¸­ä¾æ¬¡å–ä¸€ä¸ªæ•°å­—å‡ºæ¥å³å¯ï¼Œå› ä¸ºæˆ‘ä»¬ä¿æŒå‡åºï¼Œæ‰€ä»¥ä¸éœ€è¦å–å½“å‰Indexä¹‹å‰çš„æ•°å­—ã€‚
+ å¯¹äºæ¯ä¸€ä¸ªæŒ‡é’ˆstartï¼Œ å¾ªç¯åŠ å…¥ä»¥S[start]ä¸ºèµ·å§‹å…ƒç´ çš„subsetï¼Œ ä¸€å±‚forå¾ªç¯ç»“æŸåï¼Œ æŠŠåˆšåˆšåŠ å…¥åˆ°ä¸´æ—¶å­é›†ä¸­çš„å…ƒç´ removeæ‰ï¼Œ ä¹Ÿå°±æ˜¯å›æº¯
  backtracking recursive
-
  time complexity: o(n*2^n)
-
- TIME: 227 ms*/
+ TIME: 227 ms
+ */
 public class SubSetsII {
-
 	public static ArrayList<ArrayList<Integer>> subsetsNoDup(int[] source) {
-
 		// new empty subsetList
 		ArrayList<ArrayList<Integer>> subsetsList = new ArrayList<ArrayList<Integer>>();
 		// new subset
@@ -44,51 +37,42 @@ public class SubSetsII {
 		// corner check
 		if (source == null || source.length == 0)
 			return subsetsList;
-
 		// sort the array first
 		Arrays.sort(source);
-
 		// call help function
 		subsetsHelper(subsetsList, subset, source, 0);
-
 		return subsetsList;
-
 	}
 
 	public static void subsetsHelper(ArrayList<ArrayList<Integer>> result,
 			ArrayList<Integer> list, int[] num, int pos) {
-
 		result.add(new ArrayList<Integer>(list));
 
 		/*
-		 * i´¦Ëù´ú±íµÄ±äÁ¿¼´ÎªÄ³Ò»²ã±éÀúÖĞµÃ¡¸µÚÒ»¸öÔªËØ¡¹ i == position --> go depth, when we add
+		 * iå¤„æ‰€ä»£è¡¨çš„å˜é‡å³ä¸ºæŸä¸€å±‚éå†ä¸­å¾—ã€Œç¬¬ä¸€ä¸ªå…ƒç´ ã€ i == position --> go depth, when we add
 		 * number, we don't care duplicates i != position means back tracking,
 		 * already remove one number, i++ which leads i!=position,(i>position
 		 * also works) that means second or third or more time, we care about
 		 * the duplicate numbers. As they are sorted, we abort and continue
 		 */
-
 		for (int i = pos; i < num.length; i++) {
-			// // ¿ØÖÆÊ÷µÄ·ÖÖ§ ¹Ø¼ü : backtrack
+			// // æ§åˆ¶æ ‘çš„åˆ†æ”¯ å…³é”® : backtrack
 			if (i != pos && num[i] == num[i - 1]) {
 				continue;
 			}
 
 			list.add(num[i]);
-			// ¶ÔÓÚÃ¿Ò»¸öÖ¸Õëstart£¬ Ñ­»·¼ÓÈëÒÔS[start]ÎªÆğÊ¼ÔªËØµÄsubset
+			// å¯¹äºæ¯ä¸€ä¸ªæŒ‡é’ˆstartï¼Œ å¾ªç¯åŠ å…¥ä»¥S[start]ä¸ºèµ·å§‹å…ƒç´ çš„subset
 			// not: subsetsListPara.add(subsetPara)
 			/*
-			 * pass by reference Õâ¸ö×Ô¼ºÒ²ÖªµÀ£¬ µ«ÊÇĞ´µÄÊ±ºò¾ÓÈ»ÀíËùÓ¦µ±µÄÖ±½ÓaddÁËlis ±ÈÈç¸Õ¿ªÊ¼¼Ó½øÈ¥ÊÇ[],
-			 * È»ºóµ±¼ÓÈë[1]µ½resultÊ±, resultÊµ¼ÊÉÏÊÇ{{1} , {1}}, È»ºó¼ÓÈë[2]µ½listºó, result
-			 * add list±ä³ÉÁË {{1,2}{1,2}{1,2}}. ÕâÏÔÈ»ÊÇ²»¶ÔµÄ¡±
+			 * pass by reference è¿™ä¸ªè‡ªå·±ä¹ŸçŸ¥é“ï¼Œ ä½†æ˜¯å†™çš„æ—¶å€™å±…ç„¶ç†æ‰€åº”å½“çš„ç›´æ¥addäº†lis æ¯”å¦‚åˆšå¼€å§‹åŠ è¿›å»æ˜¯[],
+			 * ç„¶åå½“åŠ å…¥[1]åˆ°resultæ—¶, resultå®é™…ä¸Šæ˜¯{{1} , {1}}, ç„¶ååŠ å…¥[2]åˆ°listå, result
+			 * add listå˜æˆäº† {{1,2}{1,2}{1,2}}. è¿™æ˜¾ç„¶æ˜¯ä¸å¯¹çš„â€
 			 */
-
 			subsetsHelper(result, list, num, i + 1);
-
-			// Ò»²ãforÑ­»·½áÊøºó£¬ °Ñ¸Õ¸Õ¼ÓÈëµ½ÁÙÊ±×Ó¼¯ÖĞµÄÔªËØremoveµô£¬ Ò²¾ÍÊÇ»ØËİbacktrack¡£
+			// ä¸€å±‚forå¾ªç¯ç»“æŸåï¼Œ æŠŠåˆšåˆšåŠ å…¥åˆ°ä¸´æ—¶å­é›†ä¸­çš„å…ƒç´ removeæ‰ï¼Œ ä¹Ÿå°±æ˜¯å›æº¯backtrackã€‚
 			list.remove(list.size() - 1);// why?????
 		}
-
 	}
 
 	public static void main(String[] args) {

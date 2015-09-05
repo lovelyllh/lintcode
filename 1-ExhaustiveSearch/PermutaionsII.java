@@ -3,33 +3,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /*Question:
- http://bulo.hujiang.com/menu/109531/list
-
  Given a list of numbers with duplicate number in it. Find all unique permutations.
- Medium Permutations II
-
- Given a list of numbers with duplicate number in it. Find all unique permutations.
-
- Have you met this question in a real interview? Yes
  Example
  For numbers [1,2,2] the unique permutations are:
 
  [
-
  [1,2,2],
-
  [2,1,2],
-
  [2,2,1]
-
  ]
-
  Challenge
  Do it without recursion.
- Answer:
-
- http://www.jiuzhang.com/solutions/permutations-ii/
-
  */
 
 public class PermutaionsII {
@@ -63,7 +47,7 @@ public class PermutaionsII {
 		}
 
 		for (int i = 0; i < nums.size(); i++) {
-			// È¥ÖØµÄÁ½¸ö·½·¨£º Ò»¸öÊÇÔÚ¼ÓÈë½á¹ûµÄÊ±ºòÓÃcontainsÅÐ¶Ï£¬Ò»¸öÊÇÔÚÕÒ½á¹ûµÄÊ±ºò¿´ËûÊÇ²»ÊÇ¸úÇ°Ò»¸öÔªËØÏàÍ¬¡£
+			// åŽ»é‡çš„ä¸¤ä¸ªæ–¹æ³•ï¼š ä¸€ä¸ªæ˜¯åœ¨åŠ å…¥ç»“æžœçš„æ—¶å€™ç”¨containsåˆ¤æ–­ï¼Œä¸€ä¸ªæ˜¯åœ¨æ‰¾ç»“æžœçš„æ—¶å€™çœ‹ä»–æ˜¯ä¸æ˜¯è·Ÿå‰ä¸€ä¸ªå…ƒç´ ç›¸åŒã€‚
 			System.out.println("1. nums[ " + i + "]'s visited[i] is: "
 					+ visited[i]);
 

@@ -1,17 +1,11 @@
 /*Previous Permutation
  * 1.Given a list of integers, which denote a permutation. Find the 
  * previous permutation in ascending order.
- * 
- * Example
+Example
 For [1,3,2,3], the previous permutation is [1,2,3,3]
 For [1,2,3,4], the previous permutation is [4,3,2,1]
-
 Challenge
 The list may contains duplicate integers.
- * 
- * 2.  Answer:
- * 
- * 
  * */
 
 
