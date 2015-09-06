@@ -25,20 +25,22 @@ public class SearchInsertPositionBinarySearch {
 		int start = 0;
 		int end = A.length -1;
 		//binary search, find the last position < target
-		while (start < end){
-			int mid = (start + start)/2;
+		while (start + 1 < end){
+			int mid = start + (end - start)/2;
 			if (A[mid] == target){
 				return mid;
 			}else if(A[mid] < target){
-				start = mid + 1;
+				start = mid;
 			}else{
-				end = mid - 1;
+				end = mid;
 			}
-		}//binary search: 就是当循环结束时，如果没有找到目标元素，那么left (start)一定停在恰好比目标大的index上，right (end)一定停在恰好比目标小的index上
-		if (target > A[start]){
-			return start + 1;
-		}else{
+		}
+		if (A[start] >= target){
 			return start;
+		}else if (A[end] >= target){
+			return end;
+		}else{
+			return end + 1;
 		}
 	}
 
