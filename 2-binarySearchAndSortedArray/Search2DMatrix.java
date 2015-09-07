@@ -3,8 +3,6 @@ package binarySearchAndSortedArray;
 import java.util.ArrayList;
 
 /*search 2d matrix
-question: http://www.lintcode.com/en/problem/search-a-2d-matrix/#
-answer: http://www.jiuzhang.com/solutions/search-a-2d-matrix/
 
 Write an efficient algorithm that searches for a value in an m x n matrix.
 This matrix has the following properties:
@@ -40,7 +38,7 @@ public class Search2DMatrix {
 		int mid;
 		while (start + 1 < end){
 			mid = start + (end - start) / 2;
-			int number = matrix[mid / collum][mid % collum]; //行数是position/columns，而列数是position%columns,
+			int number = matrix[mid / collum][mid % collum]; 
 			if (number == target){
 				return true;
 			}else if (number < target){
