@@ -1,8 +1,5 @@
 package binarySearchAndSortedArray;
 /*Reverse Words in a String
-question: http://www.lintcode.com/en/problem/reverse-words-in-a-string/
-answer: http://www.jiuzhang.com/solutions/reverse-words-in-a-string/
-
 Given an input string, reverse the string word by word.
 For example,
 Given s = "the sky is blue",
