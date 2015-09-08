@@ -1,8 +1,6 @@
 package binarySearchAndSortedArray;
 
 /*search 2D Matrix II
-question: http://www.lintcode.com/en/problem/search-a-2d-matrix-ii/
-answer:
 Write an efficient algorithm that searches for a value in an m x n matrix, return the occurrence of it.
 This matrix has the following properties:
 
