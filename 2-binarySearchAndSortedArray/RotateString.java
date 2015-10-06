@@ -1,9 +1,6 @@
 package binarySearchAndSortedArray;
 
 /*Rotate String
- question: http://www.lintcode.com/en/problem/rotate-string/
- answer:  http://www.jiuzhang.com/problem/55/
-
 Given a string and an offset, rotate string by offset. (rotate from left to right)
 Example
 Given "abcdefg".
